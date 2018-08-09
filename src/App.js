@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       guesses: [2, 3, 12],
       correctAnswer: Math.floor(Math.random() * 100) + 1,
-      feedback: 'Make a guess'  
+      feedback: 'Make a guess between 1 and 100'  
     }
   }
 
@@ -20,10 +20,12 @@ class App extends Component {
     return (
       <div className="HotColdApp">
         <Nav />
-        <h1>Hot or Cold</h1>
-        <Feedback feedback={this.state.feedback} />
-        <Form />
-        <Guesses guesses={this.state.guesses} />
+        <div className="app-body">
+          <h1>Hot or Cold</h1>
+          <Feedback feedback={this.state.feedback} />
+          <Form />
+          <Guesses guesses={this.state.guesses} />
+        </div>
       </div>
     );
   }

@@ -7,7 +7,7 @@ export default function Form() {
 	return( 
 		<form>
 			<input type="text"></input>
-			<input type="submit"></input>
+			<input type="submit" className="submit"></input>
 		</form>
 	)
 }

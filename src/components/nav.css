@@ -1,16 +1,13 @@
 .navigation {
 	background: #73E4CA;
-	padding: 0;
-	margin: 0;
-	display: grid;
 }
 
 ul {
+	display: inline-block;
 	list-style-type: none;
 }
 
 li {
-	display: inline-block;
 	float: left;
 }
 
@@ -20,4 +17,9 @@ a {
  	border: 1px black solid;
  	border-radius: 3px;
  	padding: 10px;
+}
+
+.new-game {
+	float: right;
+	display: inline-block;
 }
