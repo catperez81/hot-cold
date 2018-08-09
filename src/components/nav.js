@@ -7,9 +7,11 @@ export default function Nav(props) {
 	return (
 		<div className="navigation">
 	    <ul>
-	    	<li>How to play</li>
-	    	<li>New game</li>
+	    	<li><a href="#">How to play</a></li>
+	    	<li><a href="#">New game</a></li>
 	    </ul>
 	  </div>
 	);
 }
+
+// works more like suprise 
