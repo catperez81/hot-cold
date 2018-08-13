@@ -6,7 +6,7 @@ import Guesses from './components/guesses';
 import Nav from './components/nav';
 import Feedback from './components/feedback';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +21,7 @@ export default class App extends React.Component {
       guesses: [],
       feedback: 'Make a guess between 1 and 100',
       correctAnswer: Math.floor(Math.random() * 100) + 1
-    )};
+    });
   }
 
   currentGuess(guess) {
