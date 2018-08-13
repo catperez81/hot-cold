@@ -6,13 +6,29 @@ import Guesses from './components/guesses';
 import Nav from './components/nav';
 import Feedback from './components/feedback';
 
-class App extends Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      guesses: [2, 3, 12],
+      guesses: [],
+      feedback: 'Make a guess between 1 and 100',  
       correctAnswer: Math.floor(Math.random() * 100) + 1,
-      feedback: 'Make a guess between 1 and 100'  
+    }
+  }
+
+  restartGame() {
+    this.setState({
+      guesses: [],
+      feedback: 'Make a guess between 1 and 100',
+      correctAnswer: Math.floor(Math.random() * 100) + 1
+    )};
+  }
+
+  currentGuess(guess) {
+    guess = parseInt(guess, 10);
+    if (isNaN(guess)) {
+      this.setState({ feedback: 'Please enter a valid number' });
+      return;
     }
   }
 
@@ -22,8 +38,8 @@ class App extends Component {
         <Nav />
         <div className="app-body">
           <h1>Hot or Cold</h1>
-          <Feedback feedback={this.state.feedback} />
           <Form />
+          <Feedback feedback={this.state.feedback} />
           <Guesses guesses={this.state.guesses} />
         </div>
       </div>
