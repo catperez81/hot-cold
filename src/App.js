@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Form from './components/form';
+import Feedback from './components/feedback';
 import Guesses from './components/guesses';
 import Nav from './components/nav';
-import Feedback from './components/feedback';
 
 class App extends React.Component {
   constructor(props) {

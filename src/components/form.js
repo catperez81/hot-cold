@@ -3,27 +3,28 @@ import ReactDOM from 'react-dom';
 
 import './form.css';
 
-export default function Form() {
+export default class Form extends React.Component {
 
 	onSubmit(event) {
 		event.preventDefault();
+
+		if(this.props.currentGuess) {
+			const value = this.input.value;
+			this.props.currentGuess(value);
+		}
+
+		console.log(this.input.value);
+
+		this.input.value = '';
+		this.input.focus();
 	}
 
-	currentGuess(guess) {
-    guess = parseInt(guess, 10);
-    
-    if (isNaN(guess)) {
-      this.setState({ feedback: 'Please enter a valid number' });
-      return;
-    }
-
+	render() {
 		return( 
-			<form>
-				<input type="text" /> 
-				<input type="submit" className="submit" />
+			<form onSubmit={e => this.onSubmit(e)}>
+				<input type="number" className="number-field" min="1" max="100" ref={input => (this.input = input)} required /> 
+				<button type="submit" className="submit">Guess</button>
 			</form>
 		)
-
 	}
 }
-

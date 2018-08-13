@@ -12,9 +12,9 @@ export default function Guesses(props) {
   ));
 
 	return (
-		<div className="guess-count">
+		<div className="guess-list">
 			<ul>
-				{guessCount}
+				{guesses}
 			</ul>
 		</div>
 	)

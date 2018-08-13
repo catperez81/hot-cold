@@ -2,15 +2,18 @@ body {
 	background: white;
 }
 
-input {
-	padding: 10px;
+.number-field {
+	border-radius: 3px;
+	padding: 10px 50px 10px 10px;
 	text-align: left;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 .submit {
 	background-color: #73E4CA;
-	margin-left: 20px;
+    margin-left: 20px;
+    padding: 14px;
+    font-size: 20px;
 }
 
 form {
