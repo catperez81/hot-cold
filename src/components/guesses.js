@@ -7,13 +7,13 @@ export default function Guesses(props) {
 
   const guesses = props.guesses.map((guess, index) => (
     <li className="guesses-wrapper" key={index}>
-      {guess}
+      {guess} 
     </li>
   ));
 
 	return (
 		<div className="guess-list">
-			<ul>
+			<ul className="guesses">
 				{guesses}
 			</ul>
 		</div>
