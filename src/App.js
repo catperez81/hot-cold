@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 import Form from './components/form';
@@ -25,12 +26,18 @@ class App extends React.Component {
   }
 
   currentGuess(guess) {
-    guess = parseInt(guess, 10);
+    guess = parseInt(guess, 100);
     if (isNaN(guess)) {
       this.setState({ feedback: 'Please enter a valid number' });
       return;
     }
   }
+
+  addGuess(newGuess) {
+    this.setState({ Guesses: [...this.state.Guesses, newGuess]});
+    console.log({newGuess});
+  }
+
 
   render() {
     return (

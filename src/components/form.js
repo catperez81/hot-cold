@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './form.css';
 
+
 export default class Form extends React.Component {
 
 	onSubmit(event) {
@@ -12,8 +13,6 @@ export default class Form extends React.Component {
 			const value = this.input.value;
 			this.props.currentGuess(value);
 		}
-
-		console.log(this.input.value);
 
 		this.input.value = '';
 		this.input.focus();

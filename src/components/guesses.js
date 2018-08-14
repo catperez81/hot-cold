@@ -6,9 +6,9 @@ import './guesses.css';
 export default function Guesses(props) {
 
   const guesses = props.guesses.map((guess, index) => (
-      <li className="guesses-wrapper" key={index}>
-        {guess}
-      </li>
+    <li className="guesses-wrapper" key={index}>
+      {guess}
+    </li>
   ));
 
 	return (
