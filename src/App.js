@@ -25,19 +25,10 @@ class App extends React.Component {
     });
   }
 
-  currentGuess(guess) {
-    guess = parseInt(guess, 100);
-    if (isNaN(guess)) {
-      this.setState({ feedback: 'Please enter a valid number' });
-      return;
-    }
-  }
-
   addGuess(newGuess) {
-    this.setState({ Guesses: [...this.state.Guesses, newGuess]});
-    console.log({newGuess});
+    newGuess = parseInt(newGuess, 10);
+    this.setState({guesses: [...this.state.guesses, newGuess]});
   }
-
 
   render() {
     return (
@@ -45,7 +36,10 @@ class App extends React.Component {
         <Nav />
         <div className="app-body">
           <h1>Hot or Cold</h1>
-          <Form />
+
+          {/* add function as a prop to render the addGuess function */}
+          <Form addGuess={guess => this.addGuess(guess)}/>
+
           <Feedback feedback={this.state.feedback} />
           <Guesses guesses={this.state.guesses} />
         </div>

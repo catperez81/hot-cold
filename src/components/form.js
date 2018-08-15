@@ -9,9 +9,9 @@ export default class Form extends React.Component {
 	onSubmit(event) {
 		event.preventDefault();
 
-		if(this.props.currentGuess) {
+		if(this.props.addGuess) {
 			const value = this.input.value;
-			this.props.currentGuess(value);
+			this.props.addGuess(value);
 		}
 
 		this.input.value = '';
