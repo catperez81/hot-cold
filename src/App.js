@@ -30,10 +30,11 @@ class App extends React.Component {
     this.setState({guesses: [...this.state.guesses, newGuess]});
   }
 
+  // on restart game, empty argument syntax (), pass through as a prop //
   render() {
     return (
       <div className="HotColdApp">
-        <Nav />
+        <Nav restartGame={() => this.restartGame()} />
         <div className="app-body">
           <h1>Hot or Cold</h1>
 
