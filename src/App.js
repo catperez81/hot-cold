@@ -27,11 +27,28 @@ class App extends React.Component {
 
   addGuess(newGuess) {
     newGuess = parseInt(newGuess, 10);
-    this.setState({guesses: [...this.state.guesses, newGuess]});
+    let feedback = "";
+    //absolute value turns negative to positive integers //
+    let difference = Math.abs(this.state.correctAnswer - newGuess);
+    console.log("difference", difference);
+    if(difference === 0) {
+      feedback = "You guessed right!";
+    } else if (difference < 10) {
+      feedback = "You're getting hotter!";
+    } else if (difference < 30) {
+      feedback = "You're warm, keep trying!";
+    } else {
+      feedback = "Cold";
+    }
+    this.setState({
+      guesses: [...this.state.guesses, newGuess],
+      feedback: feedback
+    });
   }
 
   // on restart game, empty argument syntax (), pass through as a prop //
   render() {
+    console.log("currentNumber", this.state.correctAnswer);
     return (
       <div className="HotColdApp">
         <Nav restartGame={() => this.restartGame()} />
