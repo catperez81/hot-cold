@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: Ez1FRLAU9U1THKwYoAqBrtRVgt61/ki+xCKkxo56j94mVnSoLCoxfdr7N/yMAbDMUVAEookK/rN8/w3PStG76yQtjj77/PPDwZw7BkYmP87VefcnU6/QLzOMvvnTqrwBAXxlIf4JWnaRATKUiyobJw0S6jXC16CGPH5vhO4DwmzkdDQWFEP7cefKaGXbHdPDQ/2e2rpLa9qCignVZEWGLbBzHV5f9g0zF/QlGe7L65juwoSTHZplsr7qtbhj8Uy/9ZAgNVMMCn7nWYSiITGdyhPXkog6OsLONuTIPMgXN7T/hm5V/TFjEUwsM5Ke3tyGEig9K7y29C2DEEr7Ysj2578nFT0IRffDREDjDU4eqJMQYJgWVHSoDKsnB/PIkIzox3ZRZl/aKM5TUvjrncu7BPWad3LvrXR3ISNDsPILwiBfPGJLZ8sE4U3Au0pRjy0upDp3S5LwhSsidfUie+2yTxk+BBUw/mR7sITtjfFnfwoQVQhBxeO2fQEH+r3hxZWbsdCwZ3iu9OZOIO7NK/k9BiRn5GixDzD1hMc2ZPKcz3f9bnnro37XlQ5EQ5C70VgcyEuszKfvfDcwj1fjNX9g7bvm8dv8eK9wHOF0fb/AuNb9NK8bqYxIKWUcnu4aIkBfoLitq9OqpLItwVnn4I6neOlBi3zolGHxSGmMiI4MmjE=
+  app: agile-stream-74323
+  on:
+    repo: catperez81/hot-cold
